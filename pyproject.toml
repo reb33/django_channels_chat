@@ -10,7 +10,9 @@ requires-python = ">=3.14"
 dependencies = [
     "asgiref (>=3.11.1,<4.0.0)",
     "django (>=6.0.3,<7.0.0)",
-    "sqlparse (>=0.5.5,<0.6.0)"
+    "sqlparse (>=0.5.5,<0.6.0)",
+    "channels (>=4.3.2,<5.0.0)",
+    "daphne (>=4.2.1,<5.0.0)"
 ]
 
 
@@ -22,3 +24,8 @@ build-backend = "poetry.core.masonry.api"
 line-length = 120
 format.preview = true  # To enable quote-style preserve
 format.quote-style = 'preserve'
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.15.7,<0.16.0)"
+]

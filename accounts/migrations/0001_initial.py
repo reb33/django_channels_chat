@@ -6,11 +6,9 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -23,7 +21,20 @@ class Migration(migrations.Migration):
                 ('is_active', models.BooleanField(default=True)),
                 ('is_admin', models.BooleanField(default=False)),
                 ('created', models.DateTimeField(default=django.utils.timezone.now)),
-                ('phone_number', models.CharField(blank=True, max_length=12, null=True, validators=[django.core.validators.RegexValidator(message="Phone number must be entered in the format: '+79999999999' or '89999999999'.", regex='^((\\+7)|8)\\d{10}$')])),
+                (
+                    'phone_number',
+                    models.CharField(
+                        blank=True,
+                        max_length=12,
+                        null=True,
+                        validators=[
+                            django.core.validators.RegexValidator(
+                                message="Phone number must be entered in the format: '+79999999999' or '89999999999'.",
+                                regex='^((\\+7)|8)\\d{10}$',
+                            )
+                        ],
+                    ),
+                ),
             ],
             options={
                 'abstract': False,
