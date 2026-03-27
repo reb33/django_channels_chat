@@ -51,8 +51,7 @@ class Event(models.Model):
         ("Left", "left")
         ]
     type = models.CharField(choices=CHOICES, max_length=10)
-    description= models.CharField(help_text="A description of the event that occurred",\
-    max_length=50, editable=False)
+    description= models.CharField(help_text="A description of the event that occurred", max_length=50, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     group = models.ForeignKey(Group ,on_delete=models.CASCADE)
