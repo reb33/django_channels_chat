@@ -264,6 +264,28 @@ tests = ["async-timeout", "coverage (>=4.5,<5.0)", "pytest", "pytest-asyncio", "
 types = ["types-channels"]
 
 [[package]]
+name = "channels-redis"
+version = "4.3.0"
+description = "Redis-backed ASGI channel layer implementation"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "channels_redis-4.3.0-py3-none-any.whl", hash = "sha256:48f3e902ae2d5fef7080215524f3b4a1d3cea4e304150678f867a1a822c0d9f5"},
+    {file = "channels_redis-4.3.0.tar.gz", hash = "sha256:740ee7b54f0e28cf2264a940a24453d3f00526a96931f911fcb69228ef245dd2"},
+]
+
+[package.dependencies]
+asgiref = ">=3.9.1,<4"
+channels = ">=4.2.2"
+msgpack = ">=1.0,<2.0"
+redis = ">=4.6"
+
+[package.extras]
+cryptography = ["cryptography (>=1.3.0)"]
+tests = ["async-timeout", "cryptography (>=1.3.0)", "pytest", "pytest-asyncio", "pytest-timeout"]
+
+[[package]]
 name = "constantly"
 version = "23.10.4"
 description = "Symbolic constants in Python"
@@ -440,7 +462,6 @@ description = "MessagePack serializer"
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-markers = "platform_python_implementation == \"CPython\""
 files = [
     {file = "msgpack-1.1.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:0051fffef5a37ca2cd16978ae4f0aef92f164df86823871b5162812bebecd8e2"},
     {file = "msgpack-1.1.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:a605409040f2da88676e9c9e5853b3449ba8011973616189ea5ee55ddbc5bc87"},
@@ -590,6 +611,26 @@ cryptography = ">=46.0.0,<47"
 [package.extras]
 docs = ["sphinx (!=5.2.0,!=5.2.0.post0,!=7.2.5)", "sphinx_rtd_theme"]
 test = ["pretend", "pytest (>=3.0.1)", "pytest-rerunfailures"]
+
+[[package]]
+name = "redis"
+version = "7.4.0"
+description = "Python client for Redis database and key-value store"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "redis-7.4.0-py3-none-any.whl", hash = "sha256:a9c74a5c893a5ef8455a5adb793a31bb70feb821c86eccb62eebef5a19c429ec"},
+    {file = "redis-7.4.0.tar.gz", hash = "sha256:64a6ea7bf567ad43c964d2c30d82853f8df927c5c9017766c55a1d1ed95d18ad"},
+]
+
+[package.extras]
+circuit-breaker = ["pybreaker (>=1.4.0)"]
+hiredis = ["hiredis (>=3.2.0)"]
+jwt = ["pyjwt (>=2.9.0)"]
+ocsp = ["cryptography (>=36.0.1)", "pyopenssl (>=20.0.1)", "requests (>=2.31.0)"]
+otel = ["opentelemetry-api (>=1.39.1)", "opentelemetry-exporter-otlp-proto-http (>=1.39.1)", "opentelemetry-sdk (>=1.39.1)"]
+xxhash = ["xxhash (>=3.6.0,<3.7.0)"]
 
 [[package]]
 name = "ruff"
@@ -893,4 +934,4 @@ testing = ["coverage[toml]", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.14"
-content-hash = "885c222755684dab93c1244c220ba5f9fbf3464ff2b61d281e375efd07543409"
+content-hash = "15d892b870eb75b007e71b2c45ca36b774d911b8326258710e6e50becb6b938d"
